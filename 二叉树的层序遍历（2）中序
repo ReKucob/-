@@ -1,0 +1,55 @@
+中序遍历是一个稍微有些特殊的遍历方式。
+不同于先序后序这种按照层次来进行遍历的方式，中序遍历是看该节点是否有左子树
+当有左子树的时候将节点切换为左子树的节点，然后再次询问，若没有，便输出节点数据，然后检查右子树。
+
+一句话概括：左子树优先。
+
+通常来说，中序遍历有两种方式，第一种是递归，是非常迅速的一种方式。第二种是迭代，会对条理梳理的更加清晰。
+
+第一种方式：
+
+public class Solution
+{
+  public static void solution(TreeNode root)
+  {
+    List<Integer> result = new LinkedList<integer>();
+    if( root != nulll)
+    {
+      solution(root.left);
+      result.add(root.val);
+      solution(root.right);
+    }
+    
+    System.out.println(root);
+  }
+}
+
+第二种运用迭代的方式：
+public class Solution
+{
+  public static void solution(TreeNode root)
+  {
+    List<Integer> result = new LinkdedList<Integer>();
+    Stack<Integer> saving = new Stack<Integer>();
+    
+    TreeNode node = root;
+    
+    while(node != null || !saving.isEmpty()) //当不为空的时候或者栈里面不是空的时候；
+    {
+      while(node!= null) //只要二叉树不是空的，就不断的存值进栈；
+      {
+        saving.push(node);
+        node = node.left;
+      }
+      
+      if(!saving.isEmpty()) //只要栈内部不是空值，就可以不断返回当前节点的值并且去寻找下一个节点的信息。
+      {
+        node = saving,pop();
+        result.add(node.val);
+        node = node.right();
+      }
+    }
+    
+    System.out.println(result);
+  }
+}

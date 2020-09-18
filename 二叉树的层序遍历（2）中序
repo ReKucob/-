@@ -13,7 +13,7 @@ public class Solution
   public static void solution(TreeNode root)
   {
     List<Integer> result = new LinkedList<integer>();
-    if( root != nulll)
+    if( root != null)
     {
       solution(root.left);
       result.add(root.val);

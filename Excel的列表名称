@@ -39,7 +39,7 @@ let titleToNumber = function(s)
   
   for(let i = 0; i < n; i++)
   {
-    let temp = arr[i].charCodeAt() - 65 + 1;
+    let temp = arr[i].charCodeAt() - 64;
     result = result + temp * Math.pow(26,n - i - 1)
   }
   

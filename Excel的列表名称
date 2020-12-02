@@ -1,0 +1,25 @@
+给定正整数，返回在Excel表中相对应的列名称。
+1=>A, 2=>B......26=>Z,27=>AA....
+
+
+let convertToTitle = function(n)
+{
+  if(n <= 0) return "";
+
+  let result = "";
+
+  while (n > 0)
+  {
+    let temp = n % 26;// 转换为26进制数。
+    n = Math.floor(n / 26);
+    if(temp == 0)//当数字刚好是26的倍数的时候。
+    {
+      temp = 26;
+      n--;
+    }
+    
+    result = String.fromCharCode(temp + 64) + ressult; //fromChatCode()把ASCII转化为String。对应的是ChatAt()
+   }
+  
+  return result;
+}
